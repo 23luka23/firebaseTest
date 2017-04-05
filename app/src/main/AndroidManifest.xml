@@ -36,7 +36,22 @@
         <activity android:name=".BluetoothActivity"
             android:theme="@style/AppTheme.Dark">
         </activity>
-        <activity android:name=".GraphActivity"
+        <activity android:name=".Graph1Activity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".Graph2Activity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".Graph3Activity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".Graph4Activity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".Graph5Activity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".Graph6Activity"
             android:theme="@style/AppTheme.Dark">
         </activity>
     </application>

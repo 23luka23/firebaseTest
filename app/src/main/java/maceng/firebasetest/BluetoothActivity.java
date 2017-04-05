@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +42,7 @@ public class BluetoothActivity extends AppCompatActivity {
     public ArrayAdapter<String> mBTArrayAdapter;
     public ListView mDevicesListView;
 
-//    public DeviceData mDeviceData;
+//    public DeviceData1 mDeviceData;
 
 
     byte[] readBuffer;
@@ -85,7 +83,7 @@ public class BluetoothActivity extends AppCompatActivity {
         mDevicesListView.setAdapter(mBTArrayAdapter); // assign model to view
         mDevicesListView.setOnItemClickListener(mDeviceClickListener);
 
-//        mDeviceData = new DeviceData();
+//        mDeviceData = new DeviceData1();
 
 
 
@@ -394,27 +392,69 @@ public class BluetoothActivity extends AppCompatActivity {
             workerThread.start();
         }
         public void setData(String data){
+            int[] sendData = {0, 0, 0, 0, 0, 0};
             int convData;
+            String number;
             if (data!=null) {
-//            Log.d("BLUETOOTH DATA", data);
-                try {
-                    convData = Integer.parseInt(data);
-                }catch (Exception e){
-                    Log.d("STRING CONVERSION", e.toString());
-                    convData = 0;
+                String[] nums = data.split("\\.");
+                for (int i=0; i < nums.length; i++) {
+                    number = nums[i];
+                    try {
+                        convData = Integer.parseInt(number);
+                    } catch (Exception e) {
+                        Log.d("STRING CONVERSION", e.toString());
+                        convData = 0;
+                    }
+                    sendData[i] = convData;
                 }
-                DeviceData.deviceData.add((double) convData);
-                addEntry((double) convData);
+                DeviceData1.deviceData.add((double) sendData[0]);
+                DeviceData2.deviceData.add((double) sendData[1]);
+                DeviceData3.deviceData.add((double) sendData[2]);
+                DeviceData4.deviceData.add((double) sendData[3]);
+                DeviceData5.deviceData.add((double) sendData[4]);
+                DeviceData6.deviceData.add((double) sendData[5]);
+
+                addEntry(sendData);
 //            Log.d("DEVICE DATA", "value: " + this.deviceData);
             }
         }
     }
-    public void addEntry(double data){
-        if (GraphActivity.live) {
-            GraphActivity.viewport.setMinX(GraphActivity.counter-100);
-            GraphActivity.series.appendData(new DataPoint((double) GraphActivity.counter, data), true, 100);
-            GraphActivity.counter++;
-            GraphActivity.viewport.setMaxX(GraphActivity.counter);
+    public void addEntry(int[] data){
+        if (Graph1Activity.live) {
+            Graph1Activity.viewport.setMinX(Graph1Activity.counter-100);
+            Graph1Activity.series.appendData(new DataPoint((double) Graph1Activity.counter, data[0]), true, 100);
+            Graph1Activity.counter++;
+            Graph1Activity.viewport.setMaxX(Graph1Activity.counter);
         }
+        else if (Graph2Activity.live) {
+            Graph2Activity.viewport.setMinX(Graph2Activity.counter-100);
+            Graph2Activity.series.appendData(new DataPoint((double) Graph2Activity.counter, data[1]), true, 100);
+            Graph2Activity.counter++;
+            Graph2Activity.viewport.setMaxX(Graph2Activity.counter);
+        }
+        else if (Graph3Activity.live) {
+            Graph3Activity.viewport.setMinX(Graph3Activity.counter-100);
+            Graph3Activity.series.appendData(new DataPoint((double) Graph3Activity.counter, data[2]), true, 100);
+            Graph3Activity.counter++;
+            Graph3Activity.viewport.setMaxX(Graph3Activity.counter);
+        }
+        else if (Graph4Activity.live) {
+            Graph4Activity.viewport.setMinX(Graph4Activity.counter-100);
+            Graph4Activity.series.appendData(new DataPoint((double) Graph4Activity.counter, data[3]), true, 100);
+            Graph4Activity.counter++;
+            Graph4Activity.viewport.setMaxX(Graph4Activity.counter);
+        }
+        else if (Graph5Activity.live) {
+            Graph5Activity.viewport.setMinX(Graph5Activity.counter-100);
+            Graph5Activity.series.appendData(new DataPoint((double) Graph5Activity.counter, data[4]), true, 100);
+            Graph5Activity.counter++;
+            Graph5Activity.viewport.setMaxX(Graph5Activity.counter);
+        }
+//        else if (Graph6Activity.live) {
+//            Graph6Activity.viewport.setMinX(Graph6Activity.counter-100);
+//            Graph6Activity.series.appendData(new DataPoint((double) Graph1Activity.counter, data[5]), true, 100);
+//            Graph6Activity.counter++;
+//            Graph6Activity.viewport.setMaxX(Graph6Activity.counter);
+//        }
     }
 }

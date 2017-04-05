@@ -2,34 +2,88 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="fill_parent"
     android:layout_width="fill_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5"
+        android:layout_height="200dp"
         android:orientation="horizontal">
+
         <ImageButton
-            android:id="@+id/BluetoothButton"
+            android:id="@+id/GraphButton1"
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitStart"
-            android:src="@drawable/bluetooth_button" />
+            android:src="@drawable/graph_button" />
+
+        <ImageButton
+            android:id="@+id/GraphButton2"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/GraphButton3"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
+        <ImageButton
+            android:id="@+id/GraphButton4"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/GraphButton5"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
+
+        <ImageButton
+            android:id="@+id/GraphButton6"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
         android:orientation="horizontal">
+
         <ImageButton
-            android:id="@+id/GraphButton"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:id="@+id/BluetoothButton"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="true"
-            android:scaleType="fitStart"
-            android:src="@drawable/graph_button" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/bluetooth_button"
+            android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
 </LinearLayout>

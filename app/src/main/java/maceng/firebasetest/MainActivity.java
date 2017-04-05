@@ -4,19 +4,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.Toast;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends Activity {
 
-    public DeviceData mDeviceData = new DeviceData();
+    public DeviceData1 mDeviceData = new DeviceData1();
     private ImageButton bluetoothButton;
-    private ImageButton graphButton;
+    private ImageButton graph1Button;
+    private ImageButton graph2Button;
+    private ImageButton graph3Button;
+    private ImageButton graph4Button;
+    private ImageButton graph5Button;
+    private ImageButton graph6Button;
 
     private FirebaseAuth mFirebaseAuth;
 
@@ -26,7 +29,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         bluetoothButton = (ImageButton) findViewById(R.id.BluetoothButton);
-        graphButton = (ImageButton) findViewById(R.id.GraphButton);
+        graph1Button = (ImageButton) findViewById(R.id.GraphButton1);
+        graph2Button = (ImageButton) findViewById(R.id.GraphButton2);
+        graph3Button = (ImageButton) findViewById(R.id.GraphButton3);
+        graph4Button = (ImageButton) findViewById(R.id.GraphButton4);
+        graph5Button = (ImageButton) findViewById(R.id.GraphButton5);
+        graph6Button = (ImageButton) findViewById(R.id.GraphButton6);
 
         bluetoothButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -36,10 +44,45 @@ public class MainActivity extends Activity {
             }
         });
 
-        graphButton.setOnClickListener(new OnClickListener() {
+        graph1Button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, GraphActivity.class);
+                Intent intent = new Intent(MainActivity.this, Graph1Activity.class);
+                startActivity(intent);
+            }
+        });
+        graph2Button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Graph2Activity.class);
+                startActivity(intent);
+            }
+        });
+        graph3Button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Graph3Activity.class);
+                startActivity(intent);
+            }
+        });
+        graph4Button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Graph4Activity.class);
+                startActivity(intent);
+            }
+        });
+        graph5Button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Graph5Activity.class);
+                startActivity(intent);
+            }
+        });
+        graph6Button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Graph6Activity.class);
                 startActivity(intent);
             }
         });
@@ -56,9 +99,5 @@ public class MainActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-    }
-
-    public DeviceData getData() {
-        return mDeviceData;
     }
 }
