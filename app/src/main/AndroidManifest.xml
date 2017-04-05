@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="maceng.firebasetest"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <permission android:name="android.permission.BLUETOOTH" android:label="BLUETOOTH"/>
+    <permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/finess_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".LogInActivity"
+            android:theme="@style/AppTheme.Dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignUpActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".BluetoothActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name=".GraphActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+    </application>
+
+</manifest>

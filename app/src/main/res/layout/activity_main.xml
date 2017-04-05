@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/BluetoothButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/bluetooth_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/GraphButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/graph_button" />
+    </LinearLayout>
+
+</LinearLayout>
